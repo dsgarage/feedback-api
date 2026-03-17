@@ -78,7 +78,7 @@ function checkRateLimit(ip: string, apiKey: string): { allowed: boolean; remaini
 
 // 認証ミドルウェア
 export async function authMiddleware(c: Context, next: Next) {
-  const apiKey = c.req.header("X-API-Key");
+  const apiKey = c.req.header("X-API-Key") ?? c.req.header("X-Api-Key") ?? c.req.header("x-api-key");
 
   // API Key 検証
   if (!isValidApiKey(apiKey)) {
