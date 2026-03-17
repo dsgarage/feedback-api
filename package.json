@@ -1,0 +1,22 @@
+{
+  "name": "feedback-api",
+  "version": "1.0.0",
+  "description": "iOS アプリから GitHub Issue を発行する中継 API サーバー",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "hono": "^4.7.0",
+    "@hono/node-server": "^1.14.0",
+    "@octokit/rest": "^21.1.0",
+    "dotenv": "^16.4.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0",
+    "tsx": "^4.19.0",
+    "@types/node": "^22.12.0"
+  }
+}
